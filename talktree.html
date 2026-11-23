@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>英会話スタジオ Talk Tree</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>window.__resources={"https://unpkg.com/react@18.3.1/umd/react.production.min.js": "assets/react.production.min.js", "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "assets/react-dom.production.min.js"};</script>
+<script src="assets/dc-runtime.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F7F5F2}
+a{color:inherit}a:hover{color:inherit}
+.tt *{box-sizing:border-box}
+.tt img{display:block;max-width:100%}
+.tt .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.tt .site{position:sticky;top:0;z-index:20;background:rgba(247,245,242,.88);backdrop-filter:blur(8px);border-bottom:1px solid #DDD8CF}
+.tt .site-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:10px;padding-bottom:10px}
+.tt .main-nav a:hover{background:#EFEDE8}
+.tt .main-nav a.nav-cta:hover{background:#E8A33D}
+@media (max-width:720px){.tt .main-nav a.nav-link{display:none !important}.tt .main-nav a.nav-cta{white-space:nowrap}}
+.tt .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;padding:56px 0 64px}
+.tt .hero-name{font-size:clamp(3.2rem,9vw,5.6rem)}
+.tt .hero-catch{font-size:clamp(1.3rem,3.4vw,1.8rem)}
+.tt .sec-title{font-size:clamp(1.55rem,4vw,2.1rem)}
+@media (max-width:820px){.tt .hero-grid{grid-template-columns:1fr;padding:40px 0 44px;gap:28px}}
+.tt .teacher-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.tt .teacher-card{display:grid;grid-template-columns:190px 1fr}
+.tt .teacher-card img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5}
+.tt .teacher-body{padding:24px 24px 24px 4px}
+@media (max-width:820px){.tt .teacher-grid{grid-template-columns:1fr}.tt .teacher-card{grid-template-columns:150px 1fr}.tt .teacher-body{padding:18px 18px 18px 2px}}
+@media (max-width:480px){.tt .teacher-card{grid-template-columns:1fr}.tt .teacher-card img{aspect-ratio:16/9}.tt .teacher-body{padding:18px 20px 22px}}
+.tt .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.tt .video-card{transition:transform .18s ease,box-shadow .18s ease}
+.tt .video-card:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(23,60,73,.14)}
+@media (prefers-reduced-motion:reduce){.tt .video-card{transition:none}.tt .video-card:hover{transform:none}}
+.tt .price-card li{font-size:.9rem;padding:4px 0 4px 24px;position:relative;color:#5C6066}
+.tt .price-card li::before{content:"";position:absolute;left:2px;top:.72em;width:9px;height:9px;border-radius:50%;background:#E8A33D}
+.tt .flow-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.tt .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.tt .apply-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start}
+@media (max-width:820px){.tt .grid3,.tt .grid2,.tt .apply-grid{grid-template-columns:1fr}.tt .flow-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.tt .flow-grid{grid-template-columns:1fr}}
+.tt details.faq summary{list-style:none}
+.tt details.faq summary::-webkit-details-marker{display:none}
+.tt .field-input{width:100%;border:1.5px solid #DDD8CF;border-radius:10px;background:#F7F5F2;color:#26282B;padding:11px 14px;font:inherit;font-size:.95rem;min-height:2.25rem}
+.tt .radio-pill input:focus-visible + span{outline:3px solid #E8A33D;outline-offset:2px}
+.tt .hero-eyebrow::before{content:"";width:26px;height:2px;background:#E8A33D;border-radius:2px}
+</style>
+</helmet>
+<div class="tt" style="font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif; color: #26282B; background: #F7F5F2; line-height: 1.75; font-size: 16px; -webkit-font-smoothing: antialiased; width: 100%">
+
+<header class="site">
+<div class="wrap site-inner">
+<a href="#top" aria-label="英会話スタジオ Talk Tree トップへ" style="display: flex; align-items: center; gap: 10px; text-decoration: none">
+<span aria-hidden="true" style="width: 38px; height: 38px; border-radius: 12px; flex: none; background: #1F4E5F; color: #FFFFFF; display: grid; place-items: center">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-6"></path><path d="M12 16c-4.5 0-8-3-8-7 0-1 .2-2 .6-2.8C6.2 5.6 8.4 6 9.4 7 9.2 4.6 10.2 2.4 12 1c1.8 1.4 2.8 3.6 2.6 6 1-1 3.2-1.4 4.8-.8.4.8.6 1.8.6 2.8 0 4-3.5 7-8 7Z"></path></svg>
+</span>
+<span style="display: flex; flex-direction: column">
+<span style="font-family: 'Archivo', 'Noto Sans JP', sans-serif; font-weight: 800; font-size: 1.15rem; letter-spacing: .01em; line-height: 1.15">Talk Tree</span>
+<span style="font-size: .68rem; color: #5C6066; letter-spacing: .08em; line-height: 1.2">英会話スタジオ</span>
+</span>
+</a>
+<nav class="main-nav" aria-label="メインナビゲーション" style="display: flex; align-items: center; gap: 4px">
+<a class="nav-link" href="#teachers" style="text-decoration: none; font-size: .86rem; font-weight: 500; padding: 8px 10px; border-radius: 8px; min-height: 36px; display: inline-flex; align-items: center">講師紹介</a>
+<a class="nav-link" href="#videos" style="text-decoration: none; font-size: .86rem; font-weight: 500; padding: 8px 10px; border-radius: 8px; min-height: 36px; display: inline-flex; align-items: center">最新の動画</a>
+<a class="nav-link" href="#lessons" style="text-decoration: none; font-size: .86rem; font-weight: 500; padding: 8px 10px; border-radius: 8px; min-height: 36px; display: inline-flex; align-items: center">レッスンと料金</a>
+<a class="nav-link" href="#faq" style="text-decoration: none; font-size: .86rem; font-weight: 500; padding: 8px 10px; border-radius: 8px; min-height: 36px; display: inline-flex; align-items: center">よくある質問</a>
+<a class="nav-cta" href="#apply" style="text-decoration: none; font-size: .86rem; font-weight: 700; padding: 8px 16px; border-radius: 999px; min-height: 36px; display: inline-flex; align-items: center; background: #E8A33D; color: #26282B">体験レッスン申込</a>
+</nav>
+</div>
+</header>
+
+<main id="top">
+<div style="background: #173C49; color: #F7F5F2; overflow: hidden">
+<div class="wrap">
+<div class="hero-grid">
+<div>
+<p class="hero-eyebrow" style="display: inline-flex; align-items: center; gap: 8px; font-size: .8rem; font-weight: 700; letter-spacing: .14em; color: #E8A33D; margin: 0 0 14px">ENGLISH STUDIO — FUKUOKA</p>
+<h1 class="hero-name" style="font-family: 'Archivo', sans-serif; font-weight: 900; line-height: .98; letter-spacing: -.01em; margin: 0">Talk<br><span style="color: #E8A33D">Tree</span></h1>
+<p class="hero-catch" style="font-weight: 900; line-height: 1.5; margin: 22px 0 14px">大人のための、<br>話すための英会話。</p>
+<p style="color: #C9D8DC; font-size: .98rem; margin: 0 0 28px; max-width: 32em">文法の正確さより、まず話す量。福岡市中央区の小さなスタジオで、日本人講師とネイティブ講師の2名体制で、英語をやり直したい大人の「話したい」を応援します。</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; align-items: center">
+<a href="#apply" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 26px; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; background: #E8A33D; color: #26282B">体験レッスンを申し込む</a>
+<a href="#lessons" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 12px 26px; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; background: transparent; color: #F7F5F2; border: 1.5px solid #5E7E89">レッスンと料金を見る</a>
+</div>
+<p style="font-size: .82rem; color: #9FB8BF; margin: 14px 0 0">体験レッスン ¥2,200（45分）／ 体験後の勧誘はしません</p>
+</div>
+<figure style="margin: 0; aspect-ratio: 3 / 2; border-radius: 22px; overflow: hidden; box-shadow: 0 24px 48px rgba(0,0,0,.35)">
+<img src="assets/talktree/d234868758db4d9e5e3dbe82baef3a09.webp" alt="明るいスタジオで丸テーブルを囲み、コーヒーを飲みながら英語で会話する大人たちのイラスト" style="width: 100%; height: 100%; object-fit: cover">
+</figure>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 22px; border-top: 1px solid #33505C; padding: 18px 0 26px; font-size: .86rem; color: #C9D8DC">
+<span><strong style="color: #F7F5F2; font-weight: 700">場所</strong>　福岡市中央区</span>
+<span><strong style="color: #F7F5F2; font-weight: 700">営業時間</strong>　10:00–21:00</span>
+<span><strong style="color: #F7F5F2; font-weight: 700">定休日</strong>　月曜</span>
+<span><strong style="color: #F7F5F2; font-weight: 700">対象</strong>　30〜60代の社会人中心</span>
+</div>
+</div>
+</div>
+
+<section id="teachers" style="padding: 72px 0">
+<div class="wrap">
+<div style="max-width: 40em; margin-bottom: 36px">
+<p style="font-family: 'Archivo', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; color: #B57A1E; margin: 0 0 8px; text-transform: uppercase">Teachers</p>
+<h2 class="sec-title" style="font-weight: 900; line-height: 1.4; margin: 0 0 10px">講師紹介</h2>
+<p style="color: #5C6066; margin: 0">日本人講師が「文法の土台」を、ネイティブ講師が「話す実践」を担当。分からないところは日本語で質問できるので、初心者の方も安心です。</p>
+</div>
+<div class="teacher-grid">
+<article class="teacher-card" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; overflow: hidden">
+<img src="assets/talktree/470e7c31f0c06fb1122569cf5cbbd327.webp" alt="日本人講師・森田悠のイラスト">
+<div class="teacher-body">
+<p style="font-size: .78rem; font-weight: 700; letter-spacing: .1em; color: #B57A1E; margin: 0 0 4px">日本人講師 ／ 文法・基礎</p>
+<h3 style="font-size: 1.35rem; font-weight: 900; margin: 0 0 2px">森田 悠<span style="font-family: 'Archivo', sans-serif; font-size: .95rem; font-weight: 700; color: #5C6066; margin-left: 8px">Yu Morita</span></h3>
+<span style="display: inline-block; background: #FAEDD7; color: #26282B; font-weight: 700; font-size: .9rem; border-radius: 8px; padding: 6px 12px; margin: 10px 0 12px">「文法は、話すための道具」</span>
+<p style="margin: 0; font-size: .93rem; color: #5C6066">元・中学校英語教師。学校で10年以上英語を教えた経験をもとに、文法を「暗記」ではなく「話す練習とセット」で身につけるレッスンを担当します。「学生時代に止まってしまった」という方のやり直しが得意です。</p>
+</div>
+</article>
+<article class="teacher-card" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; overflow: hidden">
+<img src="assets/talktree/a33288917b96e230baf66ad526d2c6c8.webp" alt="ネイティブ講師・エマ・コリンズのイラスト">
+<div class="teacher-body">
+<p style="font-size: .78rem; font-weight: 700; letter-spacing: .1em; color: #B57A1E; margin: 0 0 4px">ネイティブ講師 ／ 会話・発音</p>
+<h3 style="font-size: 1.35rem; font-weight: 900; margin: 0 0 2px">エマ・コリンズ<span style="font-family: 'Archivo', sans-serif; font-size: .95rem; font-weight: 700; color: #5C6066; margin-left: 8px">Emma Collins</span></h3>
+<span style="display: inline-block; background: #FAEDD7; color: #26282B; font-weight: 700; font-size: .9rem; border-radius: 8px; padding: 6px 12px; margin: 10px 0 12px">“Just try — I'll catch you.”</span>
+<p style="margin: 0; font-size: .93rem; color: #5C6066">カナダ出身、福岡在住8年。会話レッスンと発音を担当します。間違いを恐れず口に出す雰囲気づくりがモットー。日本語も少し話せるので、言いたいことが出てこないときは日本語で助け舟を出します。</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="videos" style="padding: 72px 0; background: #EFEDE8">
+<div class="wrap">
+<div style="max-width: 40em; margin-bottom: 36px">
+<p style="font-family: 'Archivo', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; color: #B57A1E; margin: 0 0 8px; text-transform: uppercase">YouTube</p>
+<h2 class="sec-title" style="font-weight: 900; line-height: 1.4; margin: 0 0 10px">最新の動画</h2>
+<p style="color: #5C6066; margin: 0">レッスンの雰囲気は、動画がいちばん分かりやすい。気になるテーマから、まずは1本見てみてください。</p>
+</div>
+<div class="grid3">
+<sc-for list="{{videos}}" as="v" hint-placeholder-count="3">
+<a class="video-card" href="https://www.youtube.com/" target="_blank" rel="noopener" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; overflow: hidden; text-decoration: none; display: flex; flex-direction: column">
+<div style="aspect-ratio: 16 / 9; display: grid; place-items: center; position: relative; padding: 18px; background: {{v.bg}}">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #F7F5F2; font-size: 1.25rem; line-height: 1.35; text-align: center">{{v.pre}}<span style="color: #E8A33D">{{v.em}}</span>{{v.post}}</span>
+<span aria-hidden="true" style="position: absolute; right: 14px; bottom: 14px; width: 44px; height: 44px; border-radius: 50%; background: #FF0033; display: grid; place-items: center; box-shadow: 0 6px 14px rgba(0,0,0,.3)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"></path></svg></span>
+</div>
+<div style="padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<h3 style="font-size: 1.02rem; font-weight: 700; line-height: 1.55; margin: 0">{{v.title}}</h3>
+<p style="font-size: .8rem; color: #5C6066; margin: 0">{{v.meta}}</p>
+<span style="margin-top: auto; font-size: .88rem; font-weight: 700; color: #B57A1E">YouTubeで見る ↗</span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</section>
+
+<section id="lessons" style="padding: 72px 0">
+<div class="wrap">
+<div style="max-width: 40em; margin-bottom: 36px">
+<p style="font-family: 'Archivo', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; color: #B57A1E; margin: 0 0 8px; text-transform: uppercase">Lessons &amp; Price</p>
+<h2 class="sec-title" style="font-weight: 900; line-height: 1.4; margin: 0 0 10px">レッスンと料金</h2>
+<p style="color: #5C6066; margin: 0">続け方が選べる3つの形式。どの形式も月4回・1回60分です。まずは体験レッスンで、雰囲気と進め方をご確認ください。</p>
+</div>
+<div style="background: #173C49; color: #F7F5F2; border-radius: 18px; padding: 26px 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; margin-bottom: 24px">
+<div>
+<p style="font-size: .8rem; font-weight: 700; letter-spacing: .12em; color: #E8A33D; margin: 0">TRIAL LESSON</p>
+<p style="font-family: 'Archivo', sans-serif; font-size: 2rem; font-weight: 900; line-height: 1.1; margin: 2px 0 0">¥2,200 <small style="font-size: .85rem; font-family: 'Noto Sans JP', sans-serif; font-weight: 500; color: #C9D8DC">／ 45分</small></p>
+</div>
+<p style="margin: 0; flex: 1; min-width: 220px; font-size: .93rem; color: #C9D8DC">レベルチェック10分＋体験レッスン45分。終わりにフィードバックと料金案内をお渡ししますが、その場での入会判断は不要です。</p>
+<a href="#apply" style="display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 26px; border-radius: 999px; font-weight: 700; font-size: 1rem; text-decoration: none; background: #E8A33D; color: #26282B">体験を申し込む</a>
+</div>
+<div class="grid3">
+<article class="price-card" style="background: #FFFFFF; border: 2px solid #E8A33D; border-radius: 18px; padding: 26px 24px; display: flex; flex-direction: column">
+<span style="align-self: flex-start; font-size: .74rem; font-weight: 700; letter-spacing: .08em; background: #E8A33D; color: #26282B; border-radius: 999px; padding: 3px 12px; margin-bottom: 12px">少人数で話す量を確保</span>
+<h3 style="font-size: 1.15rem; font-weight: 900; margin: 0 0 4px">グループレッスン</h3>
+<p style="font-size: .85rem; color: #5C6066; margin: 0 0 14px">火・木 19:00–20:00 ／ 定員6名</p>
+<p style="font-family: 'Archivo', sans-serif; font-size: 1.9rem; font-weight: 900; margin: 0; line-height: 1.2">¥12,000 <small style="font-family: 'Noto Sans JP', sans-serif; font-size: .82rem; font-weight: 500; color: #5C6066">／ 月4回</small></p>
+<ul style="list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid #DDD8CF">
+<li>レベル別クラスで無理なく参加</li>
+<li>仲間と話す実践が中心</li>
+<li>振替は月1回まで可</li>
+</ul>
+</article>
+<article class="price-card" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 26px 24px; display: flex; flex-direction: column">
+<h3 style="font-size: 1.15rem; font-weight: 900; margin: 0 0 4px">マンツーマン</h3>
+<p style="font-size: .85rem; color: #5C6066; margin: 0 0 14px">予約制（10:00–21:00の間で調整）</p>
+<p style="font-family: 'Archivo', sans-serif; font-size: 1.9rem; font-weight: 900; margin: 0; line-height: 1.2">¥24,000 <small style="font-family: 'Noto Sans JP', sans-serif; font-size: .82rem; font-weight: 500; color: #5C6066">／ 月4回</small></p>
+<ul style="list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid #DDD8CF">
+<li>目標に合わせた完全カスタム</li>
+<li>旅行・仕事など目的別の対策</li>
+<li>日本人／ネイティブ講師の選択可</li>
+</ul>
+</article>
+<article class="price-card" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 26px 24px; display: flex; flex-direction: column">
+<h3 style="font-size: 1.15rem; font-weight: 900; margin: 0 0 4px">オンライン</h3>
+<p style="font-size: .85rem; color: #5C6066; margin: 0 0 14px">水・土 10:00–11:00</p>
+<p style="font-family: 'Archivo', sans-serif; font-size: 1.9rem; font-weight: 900; margin: 0; line-height: 1.2">¥16,000 <small style="font-family: 'Noto Sans JP', sans-serif; font-size: .82rem; font-weight: 500; color: #5C6066">／ 月4回</small></p>
+<ul style="list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid #DDD8CF">
+<li>自宅からそのまま参加</li>
+<li>オンラインのみの受講も可</li>
+<li>レッスン資料はデータで共有</li>
+</ul>
+</article>
+</div>
+<p style="font-size: .84rem; color: #5C6066; margin: 18px 0 0">※ 表示はすべて税込です。入会金・教材費はかかりません。</p>
+</div>
+</section>
+
+<section id="flow" style="padding: 72px 0; background: #EFEDE8">
+<div class="wrap">
+<div style="max-width: 40em; margin-bottom: 36px">
+<p style="font-family: 'Archivo', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; color: #B57A1E; margin: 0 0 8px; text-transform: uppercase">Trial Flow</p>
+<h2 class="sec-title" style="font-weight: 900; line-height: 1.4; margin: 0 0 10px">体験レッスンの流れ</h2>
+<p style="color: #5C6066; margin: 0">申し込みから体験まで、4ステップ。全部で約1時間です。</p>
+</div>
+<div class="flow-grid">
+<div style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 24px 20px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E8A33D; line-height: 1; display: block; margin-bottom: 10px">01</span>
+<h3 style="font-size: 1rem; font-weight: 900; margin: 0 0 6px">申し込み</h3>
+<p style="font-size: .88rem; color: #5C6066; margin: 0">下のフォームから希望日と形式を選んで送信。折り返し日程をご連絡します。</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 24px 20px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E8A33D; line-height: 1; display: block; margin-bottom: 10px">02</span>
+<h3 style="font-size: 1rem; font-weight: 900; margin: 0 0 6px">レベルチェック（10分）</h3>
+<p style="font-size: .88rem; color: #5C6066; margin: 0">簡単な会話と質問で今のレベルを確認します。オンラインでも受けられます。</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 24px 20px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E8A33D; line-height: 1; display: block; margin-bottom: 10px">03</span>
+<h3 style="font-size: 1rem; font-weight: 900; margin: 0 0 6px">体験レッスン（45分）</h3>
+<p style="font-size: .88rem; color: #5C6066; margin: 0">実際のレッスンと同じ形式で体験。話す量の多さを体感してください。</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 24px 20px">
+<span style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.6rem; color: #E8A33D; line-height: 1; display: block; margin-bottom: 10px">04</span>
+<h3 style="font-size: 1rem; font-weight: 900; margin: 0 0 6px">フィードバックと料金案内</h3>
+<p style="font-size: .88rem; color: #5C6066; margin: 0">今日の手応えと、おすすめの形式・料金をご案内します。持ち帰って検討OKです。</p>
+</div>
+</div>
+<p style="margin: 22px 0 0; background: #FAEDD7; border-radius: 12px; padding: 16px 20px; font-weight: 700; font-size: .95rem; text-align: center">体験後の勧誘はしません。入会するかどうかは、ご自宅でゆっくりご検討ください。</p>
+</div>
+</section>
+
+<section id="voices" style="padding: 72px 0">
+<div class="wrap">
+<div style="max-width: 40em; margin-bottom: 36px">
+<p style="font-family: 'Archivo', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; color: #B57A1E; margin: 0 0 8px; text-transform: uppercase">Voices</p>
+<h2 class="sec-title" style="font-weight: 900; line-height: 1.4; margin: 0 0 10px">生徒の声</h2>
+</div>
+<div class="grid2">
+<div style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 28px 26px">
+<p aria-label="満足の声" style="color: #E8A33D; font-size: 1rem; letter-spacing: .2em; margin: 0 0 10px">★★★★★</p>
+<blockquote style="margin: 0; font-size: 1.05rem; font-weight: 700; line-height: 1.65">文法をやり直したら、言いたいことが口に出るようになった。</blockquote>
+<p style="margin: 14px 0 0; font-size: .85rem; color: #5C6066">グループレッスン受講中 ／ 40代</p>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 28px 26px">
+<p aria-label="満足の声" style="color: #E8A33D; font-size: 1rem; letter-spacing: .2em; margin: 0 0 10px">★★★★★</p>
+<blockquote style="margin: 0; font-size: 1.05rem; font-weight: 700; line-height: 1.65">旅行で初めて英語だけでチェックインできた。</blockquote>
+<p style="margin: 14px 0 0; font-size: .85rem; color: #5C6066">マンツーマン受講中 ／ 50代</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="faq" style="padding: 72px 0; background: #EFEDE8">
+<div class="wrap">
+<div style="max-width: 40em; margin-bottom: 36px">
+<p style="font-family: 'Archivo', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; color: #B57A1E; margin: 0 0 8px; text-transform: uppercase">FAQ</p>
+<h2 class="sec-title" style="font-weight: 900; line-height: 1.4; margin: 0 0 10px">よくある質問</h2>
+</div>
+<div style="display: grid; gap: 12px; max-width: 760px">
+<details class="faq" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 14px; padding: 4px 22px">
+<summary style="cursor: pointer; font-weight: 700; padding: 14px 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 2.25rem">英語は学生時代以来で、初心者でも大丈夫ですか？<span aria-hidden="true" style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #B57A1E; font-size: 1.3rem; line-height: 1; flex: none">+</span></summary>
+<p style="margin: 0 0 16px; color: #5C6066; font-size: .94rem">はい、大丈夫です。グループレッスンはレベル別に分かれているので、同じくらいのレベルの方と無理なく始められます。日本人講師に日本語で質問できるのも、やり直し組の方に好評です。</p>
+</details>
+<details class="faq" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 14px; padding: 4px 22px">
+<summary style="cursor: pointer; font-weight: 700; padding: 14px 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 2.25rem">都合が悪い週は、振替できますか？<span aria-hidden="true" style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #B57A1E; font-size: 1.3rem; line-height: 1; flex: none">+</span></summary>
+<p style="margin: 0 0 16px; color: #5C6066; font-size: .94rem">はい、月1回まで振替が可能です。前日までにご連絡ください。マンツーマンとオンラインは日程の再調整で対応します。</p>
+</details>
+<details class="faq" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 14px; padding: 4px 22px">
+<summary style="cursor: pointer; font-weight: 700; padding: 14px 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 2.25rem">オンラインだけでも受けられますか？<span aria-hidden="true" style="font-family: 'Archivo', sans-serif; font-weight: 800; color: #B57A1E; font-size: 1.3rem; line-height: 1; flex: none">+</span></summary>
+<p style="margin: 0 0 16px; color: #5C6066; font-size: .94rem">はい、オンラインのみの受講も可能です。月4回 ¥16,000で、水・土 10:00–11:00 のクラスにご参加いただけます。体験レッスンもオンラインで受けられます。</p>
+</details>
+</div>
+</div>
+</section>
+
+<section id="apply" style="padding: 72px 0">
+<div class="wrap">
+<div class="apply-grid">
+<div>
+<div style="max-width: 40em; margin-bottom: 0">
+<p style="font-family: 'Archivo', sans-serif; font-size: .78rem; font-weight: 800; letter-spacing: .22em; color: #B57A1E; margin: 0 0 8px; text-transform: uppercase">Trial Application</p>
+<h2 class="sec-title" style="font-weight: 900; line-height: 1.4; margin: 0 0 10px">体験レッスン申し込み</h2>
+<p style="color: #5C6066; margin: 0">フォームにご記入ください。内容を確認のうえ、2営業日以内に日程調整のご連絡をします。</p>
+</div>
+<dl style="margin: 22px 0 0; display: grid; gap: 0">
+<div style="display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid #DDD8CF; font-size: .93rem"><dt style="font-weight: 700">場所</dt><dd style="margin: 0; color: #5C6066">福岡市中央区（詳細は申込後にご案内）</dd></div>
+<div style="display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid #DDD8CF; font-size: .93rem"><dt style="font-weight: 700">営業時間</dt><dd style="margin: 0; color: #5C6066">10:00–21:00 ／ 月曜定休</dd></div>
+<div style="display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding: 10px 0; border-top: 1px solid #DDD8CF; font-size: .93rem"><dt style="font-weight: 700">体験料金</dt><dd style="margin: 0; color: #5C6066">¥2,200（45分・税込）</dd></div>
+</dl>
+</div>
+<form onSubmit="{{submit}}" style="background: #FFFFFF; border: 1px solid #DDD8CF; border-radius: 18px; padding: 28px 26px">
+<div style="margin-bottom: 18px">
+<label for="f-name" style="display: block; font-weight: 700; font-size: .92rem; margin-bottom: 8px">お名前<span style="color: #B3261E; font-size: .75rem; font-weight: 700; margin-left: 6px">必須</span></label>
+<input class="field-input" type="text" id="f-name" name="name" autocomplete="name" placeholder="例：山田 花子">
+</div>
+<div style="margin-bottom: 18px">
+<label for="f-email" style="display: block; font-weight: 700; font-size: .92rem; margin-bottom: 8px">メールアドレス<span style="color: #B3261E; font-size: .75rem; font-weight: 700; margin-left: 6px">必須</span></label>
+<input class="field-input" type="email" id="f-email" name="email" autocomplete="email" placeholder="例：hanako@example.com">
+</div>
+<fieldset style="border: none; padding: 0; margin: 0 0 18px">
+<legend style="display: block; font-weight: 700; font-size: .92rem; margin-bottom: 8px; padding: 0">希望の形式<span style="color: #B3261E; font-size: .75rem; font-weight: 700; margin-left: 6px">必須</span></legend>
+<div style="display: flex; flex-wrap: wrap; gap: 10px">
+<sc-for list="{{formats}}" as="f" hint-placeholder-count="3">
+<label class="radio-pill" style="position: relative">
+<input type="radio" name="format" value="{{f.value}}" checked="{{f.checked}}" onChange="{{f.pick}}" style="position: absolute; opacity: 0; inset: 0; cursor: pointer; margin: 0">
+<span style="display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border-radius: 999px; font-size: .92rem; {{f.pillStyle}}">{{f.label}}</span>
+</label>
+</sc-for>
+</div>
+</fieldset>
+<div style="margin-bottom: 18px">
+<label for="f-date" style="display: block; font-weight: 700; font-size: .92rem; margin-bottom: 8px">希望日<span style="color: #B3261E; font-size: .75rem; font-weight: 700; margin-left: 6px">必須</span></label>
+<input class="field-input" type="date" id="f-date" name="date">
+</div>
+<div style="margin-bottom: 18px">
+<label for="f-goal" style="display: block; font-weight: 700; font-size: .92rem; margin-bottom: 8px">英語の経験・目標（任意）</label>
+<textarea class="field-input" id="f-goal" name="goal" placeholder="例：学生時代以来のやり直しです。来年の海外旅行で困らない会話力を付けたいです。" style="min-height: 96px; resize: vertical"></textarea>
+</div>
+<button type="submit" style="width: 100%; background: #E8A33D; color: #26282B; border: none; min-height: 54px; border-radius: 999px; font-size: 1.02rem; font-weight: 900; cursor: pointer; font-family: inherit">この内容で申し込む</button>
+<sc-if value="{{hasMsg}}" hint-placeholder-val="{{ false }}">
+<p role="status" style="margin: 16px 0 0; background: #E3ECEE; border-radius: 10px; padding: 12px 16px; font-size: .9rem; font-weight: 500">{{msg}}</p>
+</sc-if>
+</form>
+</div>
+</div>
+</section>
+</main>
+
+<footer style="background: #173C49; color: #C9D8DC; padding: 44px 0 36px">
+<div class="wrap">
+<p style="font-family: 'Archivo', sans-serif; font-weight: 900; font-size: 1.5rem; color: #F7F5F2; margin: 0 0 6px">Talk <span style="color: #E8A33D">Tree</span></p>
+<p style="margin: 0 0 6px; font-size: .88rem">英会話スタジオ Talk Tree ｜ 福岡市中央区 ｜ 営業時間 10:00–21:00（月曜定休）</p>
+<p style="margin: 0 0 6px; font-size: .88rem">大人のための、話すための英会話。</p>
+<p style="border-top: 1px solid #33505C; margin: 24px 0 0; padding-top: 18px; font-size: .82rem; color: #9FB8BF">© 2026 英会話スタジオ Talk Tree ｜ 見本ページ（制作：BuilderOS）</p>
+</div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { format: 'group', msg: '' };
+  }
+  renderVals() {
+    var self = this;
+    var opts = [
+      { value: 'group', label: 'グループ' },
+      { value: 'private', label: 'マンツーマン' },
+      { value: 'online', label: 'オンライン' }
+    ];
+    var formats = opts.map(function (o) {
+      var on = self.state.format === o.value;
+      return {
+        value: o.value,
+        label: o.label,
+        checked: on,
+        pick: function () { self.setState({ format: o.value }); },
+        pillStyle: on
+          ? 'background: #1F4E5F; border: 1.5px solid #1F4E5F; color: #FFFFFF; font-weight: 700'
+          : 'background: #F7F5F2; border: 1.5px solid #DDD8CF; color: #26282B; font-weight: 500'
+      };
+    });
+    return {
+      videos: [
+        { bg: '#1F4E5F', pre: '“In my ', em: 'opinion', post: '…”', title: '「I think」の次に言える、意見の伝え方3つ', meta: '意見を言うフレーズ ／ 森田 悠' },
+        { bg: '#2E6B74', pre: 'Airport → ', em: 'Hotel', post: '', title: '旅行で本当に使う英語、空港からホテルまで', meta: '旅行英会話 ／ エマ・コリンズ' },
+        { bg: '#173C49', pre: 'S + V + ', em: 'O', post: ' …', title: '5文型を知ると、言いたいことが言えるようになる理由', meta: '文法のやり直し ／ 森田 悠' }
+      ],
+      formats: formats,
+      hasMsg: !!this.state.msg,
+      msg: this.state.msg,
+      submit: function (e) {
+        e.preventDefault();
+        var el = e.currentTarget.elements;
+        var name = (el.name.value || '').trim();
+        var email = (el.email.value || '').trim();
+        var date = el.date.value;
+        if (!name || !email || !date) {
+          self.setState({ msg: '必須項目（お名前／メールアドレス／希望日）を入力してください。' });
+          return;
+        }
+        self.setState({ msg: name + ' 様、ありがとうございます。これは見本ページのため、申し込みは実際には送信されません。' });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
